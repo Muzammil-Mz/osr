@@ -43,6 +43,242 @@
             overflow-x: hidden;
         }
 
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="1" fill="%23ffd700" opacity="0.2"/></svg>');
+            opacity: 0.05;
+        }
+
+        .team-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        @media (min-width: 992px) {
+            .team-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+
+        .team-carousel {
+            flex: 1;
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-slides {
+            display: flex;
+            width: 200%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            width: 50%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 2;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-dot.active {
+            background-color: var(--tollywood-gold);
+            transform: scale(1.2);
+        }
+
+        .carousel-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .carousel-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .carousel-arrow:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .team-carousel {
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .team-info {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .team-info h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .team-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--tollywood-gold));
+        }
+
+        .team-info h4 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .team-info p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f5f5f5;
+            border-radius: 50%;
+            color: var(--dark-color);
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .team-social a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .team-social a.youtube:hover {
+            background-color: #FF0000;
+        }
+
+        .team-social a.facebook:hover {
+            background-color: #4267B2;
+        }
+
+        .team-social a.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .team-social a.twitter:hover {
+            background-color: #1DA1F2;
+        }
+
+        .experience-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .experience-item {
+            flex: 1 0 calc(50% - 20px);
+            min-width: 200px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .experience-item h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .experience-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: #666;
+        }
+
         .container {
             width: 90%;
             max-width: 1200px;
@@ -417,7 +653,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-05-16%20at%2007.11.31_9e69d8bf.jpg-PzdX2CgtVkVSkvzr3wB3uC30pmnmcV.jpeg');
+            background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-05-16%20at%2007.11.31_6f009c0d.jpg-KoNeUAHs1WV1IzuphSFQAptmfYZY7u.jpeg");
             background-size: cover;
             background-position: center;
             position: relative;
@@ -536,238 +772,6 @@
             font-size: 1.1rem;
             position: relative;
             z-index: 2;
-        }
-
-        /* Team Section */
-        .team-section {
-            padding: 100px 0;
-            background-color: #fff;
-            position: relative;
-            overflow: hidden;
-            `
-        }
-
-        .team-section::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="1" fill="%23ffd700" opacity="0.2"/></svg>');
-            opacity: 0.05;
-        }
-
-        .team-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 50px;
-        }
-
-        @media (min-width: 992px) {
-            .team-container {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-        }
-
-        .team-carousel {
-            flex: 1;
-            position: relative;
-            max-width: 500px;
-            margin: 0 auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .carousel-slides {
-            display: flex;
-            width: 200%;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-slide {
-            width: 50%;
-            position: relative;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        .carousel-controls {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            z-index: 2;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .carousel-dot.active {
-            background-color: var(--tollywood-gold);
-            transform: scale(1.2);
-        }
-
-        .carousel-arrows {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            z-index: 2;
-            padding: 0 20px;
-        }
-
-        .carousel-arrow {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .carousel-arrow:hover {
-            background-color: var(--primary-color);
-            transform: scale(1.1);
-        }
-
-        .team-info {
-            flex: 1;
-            padding: 20px;
-        }
-
-        .team-info h3 {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--dark-color);
-            position: relative;
-            display: inline-block;
-        }
-
-        .team-info h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--tollywood-gold));
-        }
-
-        .team-info h4 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .team-info p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .team-social {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .team-social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #f5f5f5;
-            border-radius: 50%;
-            color: var(--dark-color);
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .team-social a:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-5px);
-        }
-
-        .team-social a.youtube:hover {
-            background-color: #FF0000;
-        }
-
-        .team-social a.facebook:hover {
-            background-color: #4267B2;
-        }
-
-        .team-social a.instagram:hover {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-        }
-
-        .team-social a.twitter:hover {
-            background-color: #1DA1F2;
-        }
-
-        .experience-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .experience-item {
-            flex: 1 0 calc(50% - 20px);
-            min-width: 200px;
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-
-        .experience-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .experience-item i {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .experience-item h5 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--dark-color);
-        }
-
-        .experience-item p {
-            font-size: 0.9rem;
-            margin-bottom: 0;
-            color: #666;
         }
 
         /* Services Preview Section */
@@ -1157,7 +1161,7 @@
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
-            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-05-16%20at%2007.11.31_6f009c0d.jpg-KoNeUAHs1WV1IzuphSFQAptmfYZY7u.jpeg');
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-05-16%20at%2007.11.31_9e69d8bf.jpg-PzdX2CgtVkVSkvzr3wB3uC30pmnmcV.jpeg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -1455,33 +1459,6 @@
             .logo h1::before {
                 display: none;
             }
-
-            .team-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .team-carousel {
-                max-width: 100%;
-                margin-bottom: 30px;
-            }
-
-            .team-info {
-                text-align: center;
-            }
-
-            .team-info h3::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .team-social {
-                justify-content: center;
-            }
-
-            .experience-item {
-                flex: 1 0 100%;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1500,7 +1477,6 @@
                 padding: 20px 0;
                 clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
                 transition: var(--transition);
-                z-index: 100;
             }
 
             nav ul.active {
@@ -1528,10 +1504,6 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 576px) {
@@ -1545,14 +1517,6 @@
 
             .footer-content {
                 grid-template-columns: 1fr;
-            }
-
-            .team-info h3 {
-                font-size: 1.8rem;
-            }
-
-            .cta-content h2 {
-                font-size: 2rem;
             }
         }
     </style>
@@ -1570,9 +1534,8 @@
                 <ul>
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#team">Team</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#workshop">Workshop</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -1587,7 +1550,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Bringing Cinematic Visions to Life</h1>
+                <h1>Bringing Cinematic Visions to Life - Art Sathi Babu</h1>
                 <p>From film sets to grand events, we transform concepts into stunning realities</p>
                 <div class="cta-buttons">
                     <a href="#services" class="btn btn-primary">Explore Services</a>
@@ -1611,7 +1574,6 @@
             </div>
         </div>
     </section>
-
     <section id="team" class="team-section">
         <div class="container">
             <div class="section-header">
@@ -1646,11 +1608,11 @@
                 <div class="team-info">
                     <h3>Sathi Babu-Art Director</h3>
                     <h4>Founder & Director OSR ARTS</h4>
-                    <p>With over 25 years of experience in the Telugu film industry, Sathish Kumar has established OSR
+                    <p>With over 25 years of experience in the Telugu film industry, Our Founder has established OSR
                         Traders as a premier name in film production support and event management. His visionary
                         approach and meticulous attention to detail have made him the go-to expert for directors and
                         producers seeking exceptional set designs and props.</p>
-                    <p>From blockbuster movie sets to high-profile private events, Sathish's artistic vision has
+                    <p>From Tollywood movie sets to high-profile private events, Sathish's artistic vision has
                         transformed countless productions across the Telugu cinema landscape. His work spans historical
                         dramas, mythological epics, contemporary films, and elaborate event installations.</p>
 
@@ -1830,6 +1792,42 @@
                         <p>Skilled artisans working on a massive sculpture installation</p>
                     </div>
                 </div>
+                <div class="gallery-item">
+                    <img src="./assets/Screenshot_20250516_080844_Instagram.jpg" alt="Statue Construction">
+                    <div class="gallery-caption">
+                        <h4>Top Tollywood Movie</h4>
+                        <p>Skilled artisans working on a massive sculpture installation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Screenshot_20250516_080914_Instagram.jpg" alt="Statue Construction">
+                    <div class="gallery-caption">
+                        <h4>Giant Charminar</h4>
+                        <p>Skilled artisans working on a massive sculpture installation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Screenshot_20250516_080922_Instagram.jpg" alt="Statue Construction">
+                    <div class="gallery-caption">
+                        <h4>ReadyMade City</h4>
+                        <p>Skilled artisans working on a massive sculpture installation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Screenshot_20250516_080935_Instagram.jpg" alt="Statue Construction">
+                    <div class="gallery-caption">
+                        <h4>Movie Weapons</h4>
+                        <p>Skilled artisans working on a massive sculpture installation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./assets/Screenshot_20250516_080953_Instagram.jpg" alt="Statue Construction">
+                    <div class="gallery-caption">
+                        <h4>Diety</h4>
+                        <p>Skilled artisans working on a massive sculpture installation</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1880,10 +1878,9 @@
                     <p>Transforming creative visions into reality with precision, speed, and visual impact since 2010.
                     </p>
                     <div class="social-links">
-                        <a href="https://www.youtube.com/@omsrisairamtraders9" target="_blank"><i
-                                class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
@@ -1892,7 +1889,6 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#team">Our Team</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#workshop">Workshop</a></li>
@@ -1911,14 +1907,14 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Studio Way, Film District, CA 90210</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Aziznagar Hyderabad</li>
+                        <li><i class="fas fa-phone"></i> +91 9441376135</li>
                         <li><i class="fas fa-envelope"></i> info@osrtraders.com</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 OSR Traders. All Rights Reserved.</p>
+                <p>&copy; 2025 OSR Traders. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1967,76 +1963,28 @@
                 });
             });
 
-            // Team carousel functionality
-            const carouselSlides = document.querySelector('.carousel-slides');
-            const carouselDots = document.querySelectorAll('.carousel-dot');
-            const prevArrow = document.querySelector('.carousel-arrow.prev');
-            const nextArrow = document.querySelector('.carousel-arrow.next');
+            // Simple slider functionality
+            const slides = document.querySelectorAll('.project-slide');
             let currentSlide = 0;
 
             function showSlide(n) {
-                carouselSlides.style.transform = `translateX(-${n * 50}%)`;
-
-                carouselDots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
-
-                carouselDots[n].classList.add('active');
-            }
-
-            if (carouselDots.length > 0) {
-                carouselDots.forEach((dot, index) => {
-                    dot.addEventListener('click', function () {
-                        showSlide(index);
-                        currentSlide = index;
-                    });
-                });
-            }
-
-            if (prevArrow) {
-                prevArrow.addEventListener('click', function () {
-                    currentSlide = (currentSlide > 0) ? currentSlide - 1 : carouselDots.length - 1;
-                    showSlide(currentSlide);
-                });
-            }
-
-            if (nextArrow) {
-                nextArrow.addEventListener('click', function () {
-                    currentSlide = (currentSlide < carouselDots.length - 1) ? currentSlide + 1 : 0;
-                    showSlide(currentSlide);
-                });
-            }
-
-            // Auto rotate carousel
-            setInterval(function () {
-                if (carouselDots.length > 0) {
-                    currentSlide = (currentSlide < carouselDots.length - 1) ? currentSlide + 1 : 0;
-                    showSlide(currentSlide);
-                }
-            }, 5000);
-
-            // Projects slider functionality
-            const slides = document.querySelectorAll('.project-slide');
-            let currentProjectSlide = 0;
-
-            function showProjectSlide(n) {
                 if (slides.length === 0) return;
 
                 slides.forEach(slide => slide.style.display = 'none');
                 slides[n].style.display = 'flex';
             }
 
-            function nextProjectSlide() {
+            function nextSlide() {
                 if (slides.length === 0) return;
 
-                currentProjectSlide = (currentProjectSlide + 1) % slides.length;
-                showProjectSlide(currentProjectSlide);
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
             }
 
             // Initialize slider
             if (slides.length > 0) {
-                showProjectSlide(currentProjectSlide);
-                setInterval(nextProjectSlide, 5000); // Change slide every 5 seconds
+                showSlide(currentSlide);
+                setInterval(nextSlide, 5000); // Change slide every 5 seconds
             }
 
             // Create particles on click
@@ -2105,7 +2053,7 @@
 
             // Scroll animation
             function initScrollAnimations() {
-                const elements = document.querySelectorAll('.service-card, .project-slide, .client-logo, .section-header, .gallery-item, .team-carousel, .team-info, .experience-item');
+                const elements = document.querySelectorAll('.service-card, .project-slide, .client-logo, .section-header, .gallery-item');
 
                 elements.forEach(element => {
                     element.classList.add('fade-in-element');
