@@ -2710,7 +2710,7 @@
 
                     const message = `Hello, I'm interested in the following product:\n\n🆔 *Product ID:* ${productId}\n🛒 *${title}*\n📦 *Category:* ${category}\n📐 *Size:* ${size}\n💰 *Price:* ${price}\n🖼️ *Image:* ${imageUrl}\n\nPlease share more details. 🙏`;
 
-                    const whatsappLink = `https://api.whatsapp.com/send?phone=919346863398&text=${encodeURIComponent(message)}`;
+                    const whatsappLink = `https://api.whatsapp.com/send?phone=919281460799&text=${encodeURIComponent(message)}`;
                     window.open(whatsappLink, '_blank');
                 });
             });
@@ -2738,11 +2738,11 @@
             button.addEventListener('click', function () {
                 const productCard = this.closest('.product-details');
 
-                const productId = productCard.querySelector('.pid')?.textContent || 'N/A';
-                const productTitle = productCard.querySelector('.product-title')?.textContent || 'N/A';
-                const category = productCard.querySelector('.product-category')?.textContent || 'N/A';
-                const size = productCard.querySelector('.size-value')?.textContent || 'N/A';
-                const price = productCard.querySelector('.current-price')?.textContent || 'N/A';
+                const productId = productCard.querySelector('.pid')?.textContent.trim() || 'N/A';
+                const productTitle = productCard.querySelector('.product-title')?.textContent.trim() || 'N/A';
+                const category = productCard.querySelector('.product-category')?.textContent.trim() || 'N/A';
+                const size = productCard.querySelector('.size-value')?.textContent.trim() || 'N/A';
+                const price = productCard.querySelector('.current-price')?.textContent.trim() || 'N/A';
                 const image = productCard.querySelector('img')?.src || 'N/A';
 
                 const message = `Hello, I'm interested in the following product:
@@ -2757,7 +2757,11 @@
 Please share more details. 🙏`;
 
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappURL = `https://wa.me/919346863398?text=${encodedMessage}`; // replace with actual number
+
+                // Replace with your actual WhatsApp number
+                const phone = "919000217799";
+                const whatsappURL = `https://wa.me/${phone}?text=${encodedMessage}`;
+
                 window.open(whatsappURL, '_blank');
             });
         });
@@ -2765,6 +2769,7 @@ Please share more details. 🙏`;
 
 
     </script>
+
 
 </body>
 
