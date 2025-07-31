@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url); // new line
 const __dirname = path.dirname(__filename); // new line
 
 const app = express()
-const port = 5010
+const port = 5002
 
 app.use(express.static(path.join(__dirname, "build"))); // new line
 
